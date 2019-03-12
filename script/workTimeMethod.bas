@@ -46,14 +46,14 @@ Function WORK_TIME(first, last)
     End If
     
     ' 午餐时间的判断
-    If start_t > lunchTimeA And start_t < lunchTimeB Then
+    If start_t >= lunchTimeA And start_t < lunchTimeB Then
         lunchStart = start_t
     End If
-    If start_t > lunchTimeB Or end_t < lunchTimeA Then
+    If start_t >= lunchTimeB Or end_t < lunchTimeA Then
         lunchStart = 0
         lunchEnd = 0
     End If
-    If end_t > lunchTimeA And end_t < lunchTimeB Then
+    If end_t >= lunchTimeA And end_t < lunchTimeB Then
         lunchEnd = end_t
     End If
     
@@ -63,7 +63,7 @@ Function WORK_TIME(first, last)
     End If
     
     ' 晚餐时间判断
-    If end_t > endTimeB Then
+    If end_t >= endTimeB Then
         less = 30
     End If
     
